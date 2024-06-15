@@ -2,7 +2,7 @@ const data = require('./decodedpng.js');
 const cryptoJs = require('crypto-js');
 const user_agent = "Mozilla/5.0 (X11; Linux x86_64; rv:125.0) Gecko/20100101 Firefox/125.0";
 
-const main = async (provider, xrax) => {
+const main = async (provider: string, xrax: string) => {
 
   let wasm: any;
   let arr = new Array(128).fill(void 0);
@@ -80,7 +80,6 @@ const main = async (provider, xrax) => {
     context2d: {},
     length: 1,
   }
-
 
   //let script_url = provider == "rabbit" ? "https://rabbitstream.net/v2/embed-4/mcAWNPptFcOb?z=" : "https://megacloud.tv/embed-1/e-1/POg3BzgJJ55W?z=";
 
@@ -600,7 +599,8 @@ const main = async (provider, xrax) => {
 
     //console.log("\n Decoded sources:");
     //console.log(real);
-    resp_json.sources = real;
+    resp_json['decoded_sources'] = real;
+    console.log(JSON.stringify(resp_json))
     return resp_json;
   }
   return await newReq(xrax);

@@ -1,26 +1,13 @@
-import * as express from 'express';
 import { main } from './rabbit';
 
-const app = express();
-app.use(express.json());
+var myargs = process.argv.slice(2);
 
-app.get('/:provider/:id', async (req, res) => {
-  try {
-    const { provider, id } = req.params;
-    if (!["rabbit", "mega"].includes(provider)){
-      res.status(500).json({ 'error': 'Invalid API request' });
-      return
-    }
-    const result = await main(provider, id);
-    //console.log("result from index: ", result);
-    res.json(result);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Internal server error' });
-  }
-});
-
-const port = 3000;
-app.listen(port, () => {
-  console.log(`Lucky rabbit is running on port ${port}`);
-});
+async function myAsync() {
+  var _keys = await main(myargs[0], myargs[1])
+  return _keys
+}
+try{
+  myAsync()
+} catch(e) {
+  console.error(e)
+}
