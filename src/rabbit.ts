@@ -211,6 +211,92 @@ const main = async (provider: string, xrax: string) => {
   function initWasm() {
     const wasmObj = {
       'wbg': {
+        '__wbindgen_closure_wrapper117': function(Qn: any, QT: any) {
+	          return;
+        },
+        '__wbindgen_closure_wrapper119': function(Qn: any, QT: any) {
+	          return;
+        },
+        '__wbindgen_closure_wrapper121': function(Qn: any, QT: any) {
+	          return;
+        },
+        '__wbindgen_closure_wrapper123': function(Qn: any, QT: any) {
+	          return;
+        },
+        '__wbg_subarray_adc418253d76e2f1': function(arg0, arg1, arg2) {
+          const ret = get(arg0).subarray(arg1 >>> 0, arg2 >>> 0);      
+          return addToStack(ret);
+        },
+        '__wbg_newwithlength_0d03cef43b68a530': function(arg0, val) {
+          return addToStack(new Uint8Array(get(arg0), val >>> 0));
+        },
+        '__wbg_toString_139023ab33acec36': function(arg0) {
+          const ret = get(arg0).toString;
+          return addToStack(ret);
+        },
+        '__wbg_toString_6eb7c1f755c00453': function(arg0) {
+          const ret = get(arg0).toString;
+          return addToStack(ret);
+        },
+        '__wbg_call_67f2111acd2dfdb6': function (arg0, arg1) {
+          const ret = get(arg0).call(get(arg1));
+          return addToStack(ret);
+        },
+        '__wbindgen_is_function': function(arg0) {
+          const ret = typeof(get(arg0)) === 'function';
+          return ret;      
+        },
+        '__wbg_getRandomValues_3aa56aa6edec874c': function(arg0, arg1) {
+            get(arg0).getRandomValues(get(arg1))
+        },
+        '__wbg_randomFillSync_5c9c955aa56b6049': function(arg0, arg1) {
+            get(arg0).randomFillSync(shiftGet(arg1));
+        },
+        '__wbg_msCrypto_eb05e62b530a1508': function(arg0) {
+          const ret = get(arg0).msCrypto;
+          return addToStack(ret);
+        },
+        '__wbg_require_cca90b1a94a0255b': function(arg0) {
+          const ret = get(arg0).require;
+          return addToStack(ret)
+        },
+        '__wbindgen_is_string': function(arg0) {
+          let val = get(arg0);
+          let ret = typeof val === 'string';
+          return ret;
+        },
+        '__wbg_node_104a2ff8d6ea03a2': function(arg0) {
+          const ret = get(arg0).node;
+          return addToStack(ret);
+        },
+        '__wbg_versions_f686565e586dd935': function(arg0) {
+          const ret = get(arg0).versions;
+          return addToStack(ret);
+        },
+        '__wbg_process_4a72847cc503995b': function(arg0) {
+          const ret = get(arg0).process;
+          return addToStack(ret);
+        },
+        '__wbg_localStorage_3d538af21ea07fcc': function(index) {
+          return addToStack(fake_window.localStorage);
+        },
+        '__wbindgen_is_object': function(arg0) {
+          let val = get(arg0);
+          let ret = typeof val === 'object' && val !== null;
+          return ret;
+        },
+        '__wbg_crypto_1d1f22824a6a080c': function(arg0) {
+          const ret = get(arg0).crypto;
+          return addToStack(ret);
+        },
+        '__wbindgen_number_get': function(offset: number, index: number) {
+          let obj = get(index);
+          if (typeof obj === 'number') {
+            getArr32()[offset / 4] = 1;
+            getArr32()[(offset / 4) + 1] = obj;
+          } else {
+            getArr32()[offset / 4] = 0;
+        }},
         '__wbindgen_string_get': function(offset: number, index: number) {
           let str = get(index);
           let val = parse(str, wasm.__wbindgen_export_0, wasm.__wbindgen_export_1);
@@ -467,9 +553,9 @@ const main = async (provider: string, xrax: string) => {
         },
         '__wbindgen_closure_wrapper99': function(Qn: any, QT: any) {
           return addToStack(args(Qn, QT, 9, export5));
-	},
-	'__wbindgen_closure_wrapper101': function(Qn: any, QT: any) {
-	  return;
+	      },
+	      '__wbindgen_closure_wrapper101': function(Qn: any, QT: any) {
+	        return;
         }
       }
     }
@@ -555,7 +641,7 @@ const main = async (provider: string, xrax: string) => {
       }
     });
     let txt = await resp.text();
-    let regx = /name="fyq" content="[A-Za-z0-9]*/g
+    let regx = /name="j_crt" content="[A-Za-z0-9]*/g
     let match = txt.match(regx)[0];
     let content = match.slice(match.lastIndexOf('"') + 1)
     meta.content = content
